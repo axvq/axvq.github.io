@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <title>四季</title>
+    <style>
+body{
+	background:#069;
+}
+
+.loading {width:200px;height:200px;top:200px;position:relative;margin:50px auto;border:1px solid #f90;border-radius:50%;}
+.info{line-height:200px;text-align:center;top:-50px;font-size:30px;color:#fff;}
+.dot {width:100%;;height:100%;animation:rond .8s infinite;-webkit-animation:rond 3s infinite;}
+.dot:after {width:10px;height:10px;position:absolute;top:-5px;left:90px;content:"";display:table;background-color:#f50;border-radius:50%;}
+.num {width:100%;height:100%;position:absolute;top:80px;left:0;text-align:center;font-size:20px;color:#fff;}
+@keyframes rond {
+	0% {transform:rotate(0deg);}
+	100% {transform:rotate(360deg);}
+}
+@-webkit-keyframes rond {
+	0% {-webkit-transform:rotate(0deg);}
+	100% {-webkit-transform:rotate(360deg);}
+} 
+
+
+#box{
+	display:none;
+}
+
+#main{	
+	position: relative;
+	width: 184px;
+    height: 242px;
+	left:35%;
+	margin-left:-200px;
+	top:250px;
+    transform-style: preserve-3d;
+	display:none;
+
+}
+
+#pic{
+	width: 368px;
+    height: 484px;
+	position: absolute;
+	top:15%;
+	left:55%;
+	border:1px solid #fff;
+	-webkit-transform:rotateZ(0deg);
+	background-size:100% 100%; 
+	display:none;
+}
+
+#picinfo{
+	position: absolute;
+	top:635px;
+	left:28%;
+	color:#fff;
+	display:none;
+}
+
+#main>div{
+    position: absolute;
+}
+
+.side{
+	width: 184px;
+    height: 242px;
+}
+
+.ye{
+	width: 240px;
+    height: 600px;
+	top:-179px;
+}
+
+.ye1{
+	width: 240px;
+    height: 500px;
+	top:-129px;
+}
+
+.hua{
+	width: 106px;
+    height: 140px;
+	top:51px;
+}
+
+.deng{
+	width: 240px;
+    height: 430px;
+	top:-99px;
+}
+
+.snow{
+	width: 53px;
+    height: 60px;
+	top:91px;
+}
+
+.bottom{
+	width: 368px;
+    height: 323px;
+    left:0px;
+	top:-39px;
+    transform: rotateY(270deg) rotateZ(90deg) translateZ(214px);
+	-webkit-transform:rotateY(270deg) rotateZ(90deg) translateZ(214px);
+}
+.up{
+	width: 368px;
+    height: 323px;
+    left:0px;
+	top:-39px;
+    transform: rotateY(90deg) rotateZ(90deg) translateZ(29px);
+	-webkit-transform:rotateY(90deg) rotateZ(90deg) translateZ(29px);
+}
+
+#footer{
+	width:600px;
+	position:absolute;
+	text-align: center;
+	left:50%;
+	margin-left: -300px;
+	top:900px;
+	color:#fff;
+}
+#mobile{	
+	display:none;
+}
+#pc{	
+	display:block;
+}
+
+@media screen and (max-device-width:640px){
+
+#mobile{	
+	display:block;
+}
+#pc{	
+	display:none;
+}
+
+#box{	
+	position: fixed;
+	top: 0px;
+	bottom: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+#picinfo{
+	position: absolute;
+	top:530px;
+	left:40%;
+	color:#fff;
+	font-size:30px;
+}
+
+#main{	
+	position: absolute;
+	left:50%;
+	top:180px;
+	margin-left:-90px;
+
+}
+	
+#pic{
+	position: relative;
+	left:50%;
+	top:600px;
+	margin-left:-180px;
+}
+
+#footer{
+	top:1160px;
+	font-size:20px;
+}
+
+}
+
+	</style>
+</head>
+<body>
+<div id="loading" class="loading">	
+	<div class="dot"></div>
+	<div class="num" id="num">加载中<br>0%</div>
+	<div class="info">四季</div>
+</div>
+<div id="box">
+	<div id="main">
+		
+		<div id="sb1" class="side"></div>
+		<div id="sb2" class="side"></div>
+		<div id="sb3" class="side"></div>
+		<div id="sb4" class="side"></div>
+		<div id="sb5" class="side"></div>
+		<div id="sb6" class="side"></div>
+		<div id="sb7" class="up"></div>
+		<div id="sb8" class="bottom"></div>  
+		
+		<div id="s1" class="side"></div>
+		<div id="s2" class="side"></div>
+		<div id="s3" class="side"></div>
+		<div id="s4" class="side"></div>
+		<div id="s5" class="side"></div>
+		<div id="s6" class="side"></div>
+		<div id="s7" class="up"></div>
+		<div id="s8" class="bottom"></div>
+		
+		<div id="sf1" class="side"></div>
+		<div id="sf2" class="side"></div>
+		<div id="sf3" class="side"></div>
+		<div id="sf4" class="side"></div>
+		<div id="sf5" class="side"></div>
+		<div id="sf6" class="side"></div>
+		<div id="sf7" class="up"></div>
+		<div id="sf8" class="bottom"></div>  
+		
+		<div id="y1" class="ye"></div>
+		<div id="y2" class="ye"></div>
+		<div id="y3" class="ye"></div>
+		<div id="y4" class="ye"></div>
+		<div id="y5" class="ye"></div>
+		<div id="y6" class="ye"></div>
+		
+		<div id="y11" class="ye1"></div>
+		<div id="y12" class="ye1"></div>
+		<div id="y13" class="ye1"></div>
+		<div id="y14" class="ye1"></div>
+		<div id="y15" class="ye1"></div>
+		<div id="y16" class="ye1"></div>
+		
+		<div id="h1" class="hua"></div>
+		<div id="h2" class="hua"></div>
+		<div id="h3" class="hua"></div>
+		<div id="h4" class="hua"></div>
+		<div id="h5" class="hua"></div>
+		<div id="h6" class="hua"></div>
+		
+		<div id="d1" class="deng"></div>
+		<div id="d2" class="deng"></div>
+		<div id="d3" class="deng"></div>
+		<div id="d4" class="deng"></div>
+		<div id="d5" class="deng"></div>
+		<div id="d6" class="deng"></div>
+		
+		<div id="sn1" class="snow"></div>
+		<div id="sn2" class="snow"></div>
+		<div id="sn3" class="snow"></div>
+		<div id="sn4" class="snow"></div>
+		<div id="sn5" class="snow"></div>
+		<div id="sn6" class="snow"></div>
+		
+		<div id="sn11" class="snow"></div>
+		<div id="sn12" class="snow"></div>
+		<div id="sn13" class="snow"></div>
+		<div id="sn14" class="snow"></div>
+		<div id="sn15" class="snow"></div>
+		<div id="sn16" class="snow"></div>
+		
+		<div id="sn21" class="snow"></div>
+		<div id="sn22" class="snow"></div>
+		<div id="sn23" class="snow"></div>
+		<div id="sn24" class="snow"></div>
+		<div id="sn25" class="snow"></div>
+		<div id="sn26" class="snow"></div>
+
+	</div>
+</div>
+<div id="pic"></div>
+<div id="picinfo"><span id="mobile">向右滑动--></span><span id="pc">按住鼠标左键滑动</span></div>
+<div id="footer">Copyright © 2017~19 H-Design. All Rights Reserved.<br>
+<a href="index.html" style="color:white;">返回目录页</a>
+</div>
+</body>
+<script>
+	eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('G g(a,b){f(a>0)j a%b;f(a%b)j b-((-a)%b);j 0}G 19(m,s){f(s==Y)s=1;m=2*r.W(m-0.5);m=1-m;m=m*s;f(m<0)j 0;f(m>1)j 1;j m}G Z(m,s){f(s==Y)s=1;m=m*s;m-=(s-1)*0.5;f(m<0)j 0;f(m>1)j 1;j m}G t(m,a,b){m=2*r.W(m-0.5);m=a+m*(b-a);f(m<0)j 0;f(m>1)j 1;j m}l w=c.e(\'1s\');l L=c.e(\'1v\');l Q=R O("1k.q","1n.q","1o.q","1p.q","1l.q","1m.q","1t.n","1u.n");l 17=R O("1g.n","1q.n","1r.n","1a.n","1c.n","1d.n","1e.n","1b.n");l K=R O("1","2","a","3","4","b");G 1f(a,b){l x=P(w.7[\'-J-H\'].A(\'V(\')[1].A(\'u\')[0])+(-b);f(x<-I)x=-I;f(x>I)x=I;l y=P(w.7[\'-J-H\'].A(\'U(\')[1].A(\'u\')[0])+(a);l z=P(w.7[\'-J-H\'].A(\'T(\')[1].A(\'u\')[0])+(a);z=-1B;w.7[\'H\']=w.7[\'-J-H\']="V("+x+"u) U("+y+"u) T("+z+"u)";f(y<1w||y>1y)c.e(\'1D\').7.1A="1z";l k=X*4;v=t(1-(g(y+1x,k)/k),6,-15);M=Z(1-(g(y,p)/p),1.5);14=t(1-(g(y,k)/k),0.8,-2.4);13=t(1-(g(y,k)/k),0.9,-4);10=t(1-(g(y,k)/k),0.8,-1.4);f(v==0)E=1;S{E=1-v;f(M>E)M=E};18=t(1-(g(y-X,k)/k),0.9,-8);f(v==0)L.7.B="C(\'D/"+K[g(r.F((y-N)/p),6)]+"s"+(g(r.F((y+N)/p),6)+1)+".q\')";S L.7.B="C(\'D/1E"+(g(r.F((y+N)/p),6)+1)+".n\')";L.7.o=19(g(y+N,p)/p,1.5);16(l i=1;i<=8;i++){c.e(\'12\'+i).7.B="C(\'D/"+17[i-1]+"\')";c.e(\'12\'+i).7.o=v;c.e(\'s\'+i).7.B="C(\'D/"+K[g(r.F((y-p)/p),6)]+Q[i-1]+"\')";c.e(\'11\'+i).7.B="C(\'D/"+K[g(r.F((y)/p),6)]+Q[i-1]+"\')";c.e(\'s\'+i).7.o=M;c.e(\'11\'+i).7.o=E}16(l i=1;i<=6;i++){c.e(\'y\'+i).7.o=14;c.e(\'h\'+i).7.o=13;c.e(\'1C\'+i).7.o=10;c.e(\'d\'+i).7.o=v;c.e(\'1h\'+i).7.o=c.e(\'1j\'+i).7.o=c.e(\'1i\'+i).7.o=18;}};',62,103,'|||||||style|||||document||getElementById|if|mod|||return|cycle|var||png|opacity|60|jpg|Math||getOpacity3|deg|dOpc|oMain||||split|backgroundImage|url|img|sbOpc|floor|function|transform|20|webkit|imgn|oPic|sOpc|30|Array|parseFloat|picn|new|else|rotateZ|rotateY|rotateX|abs|360|null|getOpacity2|y1Opc|sb|sf|hOpc|yOpc||for|piccn|snOpc|getOpacity|cs4|cbottom|cs5|cs6|cup|move|cs1|sn|sn2|sn1|s1|s5|s6|s2|s3|s4|cs2|cs3|main|up|bottom|pic|250|750|500|none|display|90|y1|picinfo|cs'.split('|'),0,{}))
+    window.onload=function (){eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('k n=[];v T(o){k o=(2u o!="1F")?[o]:o;D(k i=0;i<o.w;i++){n[i]=1r 1q();n[i].1p="f/"+o[i]}}T(["1s.2","1v.2","1u.2","1t.2","1o.2","1j.2","1i.7","1h.7","1k.2","1n.2","1m.2","1l.2","1w.2","1H.2","1G.7","1I.7","1L.2","1K.2","1J.2","1E.2","1z.2","1y.2","1x.7","1A.7","1D.2","1C.2","1B.2","1g.2","Z.2","11.2","13.7","V.7","1c.2","1a.2","1f.2","1e.2","16.2","17.2","18.7","15.7","1d.2","Y.2","12.2","10.2","1b.2","19.2","14.7","W.7","X.7","U.7","2s.7","2t.7","2y.7","2g.7","2c.7","2d.7","L.7","K.7","I.7","S.7","B.7"]);k t=0;k Q=2k(v(){J(t==n.w){2f(Q);4.5(\'2j\').3.u="2i";4.5(\'2n\').3.u="A";4.5(\'2m\').3.u="A";4.5(\'2l\').3.u="A";4.5(\'2e\').3.u="A";x}t=0;D(k i=0;i<n.w;i++)J(n[i].2h)t++;4.5(\'2r\').2w="2v<23>"+2z(P*t/n.w)+"%"},P);q.3[\'8\']=q.3[\'-b-8\']="9(-2x) 2q(2p) e(2o)";D(k i=1;i<=6;i++){4.5(\'N\'+i).3[\'8\']=4.5(\'N\'+i).3[\'-b-8\']=4.5(\'s\'+i).3[\'8\']=4.5(\'s\'+i).3[\'-b-8\']=4.5(\'M\'+i).3[\'8\']=4.5(\'M\'+i).3[\'-b-8\']="9("+(-c+c*i)+"g) j(1U.1T) e(a)";4.5(\'y\'+i).3[\'8\']=4.5(\'y\'+i).3[\'-b-8\']="9("+(-c+c*i)+"g) j(1S) e(a) O(1X) 9(1W)";4.5(\'y\'+i).3.l="m(\'f/K.7\')";4.5(\'F\'+i).3[\'8\']=4.5(\'F\'+i).3[\'-b-8\']="9("+(-C+c*i)+"g) j(1V) e(a) O(1O) 9(1N)";4.5(\'F\'+i).3.l="m(\'f/I.7\')";4.5(\'d\'+i).3[\'8\']=4.5(\'d\'+i).3[\'-b-8\']="9("+(-C+c*i)+"g) j(1M) r(-1R) 9(-a) e(a) ";4.5(\'d\'+i).3.l="m(\'f/L.7\')";4.5(\'h\'+i).3[\'8\']=4.5(\'h\'+i).3[\'-b-8\']="9("+(-C+c*i)+"g) j(1Q) r(R) 9(-a) e(a) ";4.5(\'h\'+i).3.l="m(\'f/S.7\')";4.5(\'E\'+i).3[\'8\']=4.5(\'E\'+i).3[\'-b-8\']="9("+(-20+c*i)+"g) j(1P) r(R) 9(-a) e(a) ";4.5(\'E\'+i).3.l="m(\'f/B.7\')";4.5(\'H\'+i).3[\'8\']=4.5(\'H\'+i).3[\'-b-8\']="9("+(-1Y+c*i)+"g) j(28) r(27) 9(-a) e(a) ";4.5(\'H\'+i).3.l="m(\'f/B.7\')";4.5(\'G\'+i).3[\'8\']=4.5(\'G\'+i).3[\'-b-8\']="9("+(c*i)+"g) j(26) r(2b) 9(-a) e(a) ";4.5(\'G\'+i).3.l="m(\'f/B.7\')"}q.2a=v(p){x 29(p,z)};q.22=v(p){x 21(p,z)};q.1Z=v(p){x 25(p,z)};z(24,0);',62,160,'||jpg|style|document|getElementById||png|transform|rotateX|90deg|webkit|60||rotateZ|img|deg|||translateZ|var|backgroundImage|url|newimages|arr|ev|oMain|translateX||ready|display|function|length|return||move|block|snow|30|for|sn|y1|sn2|sn1|ye1|if|ye|deng|sb|sf|translateY|100|imgLoad|225px|hua|preloadimages|cs2|4bottom|bbottom|cs1|bs2|4s5|bs4|4s6|bs3|4up|bup|abottom|as5|as6|aup|bs6|as2|bs5|as1|bs1|as4|as3|4s4|1bottom|1up|1s6|2s1|2s4|2s3|2s2|1s5|src|Image|new|1s1|1s4|1s3|1s2|2s5|3up|3s6|3s5|3bottom|4s3|4s2|4s1|3s4|object|2up|2s6|2bottom|3s3|3s2|3s1|120px|122deg|95px|140px|50px|75px|283px|34px|159|274px|126deg|105px|40|onmousewheel||move1|ontouchstart|br|360|move2|400px|295px|240px|move0|onmousedown|5px|cup|cbottom|picinfo|clearInterval|cs6|height|none|loading|setInterval|pic|main|box|270deg|0deg|rotateY|num|cs3|cs4|typeof|加载中|innerHTML|20deg|cs5|parseInt'.split('|'),0,{}));}
+    eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('4 q(1,d){7 1=1||i.j;7 9=1.8;7 c=1.a;2.n=4(1){7 1=1||i.j;d(1.8-9,1.a-c);9=1.8;c=1.a};2.p=4(){2.n=f};h g}4 o(1,d){7 9=1.b[0].8;7 c=1.b[0].a;2.k=4(1){d(1.b[0].8-9,1.b[0].a-c);9=1.b[0].8;c=1.b[0].a};2.u=4(){2.v=f;2.k=f};h g}4 w(1,d){7 6=0;e(1.m){6=1.m/r;e(i.s)6=-6}t e(1.l){6=-1.l/3}e(6)d(5*6,0);h g}',33,33,'|ev|document||function||delta|var|clientX|disX|clientY|changedTouches|disY|mvfn|if|null|false|return|window|event|ontouchmove|detail|wheelDelta|onmousemove|move1|onmouseup|move0|120|opera|else|ontouchend|ontouchstart|move2'.split('|'),0,{}))
+</script>
+</html>
